@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Provider } from "react-redux";
+
+import "./App.css";
+import Product from "./Components/Product";
+import Dashboard from "./Components/Dashboard";
+import RootLayout from "./Components/RootLayout";
+import Counter from "./Counter/Counter";
+import store from "./Counter/store";
+import Store from "./Store/Store";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Provider store={Store}>
+    //   <Router>
+    //     <Routes>
+    //       <Route path="/" element={<RootLayout />}>
+    //         <Route path="/" element={<Product />} />
+    //         <Route path="/cart" element={<Dashboard/>} />
+    //       </Route>
+    //     </Routes>
+    //   </Router>
+    // </Provider>
+
+    <Provider store={store}>
+      <Counter />
+    </Provider>
   );
 }
 
